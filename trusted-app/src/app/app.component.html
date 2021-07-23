@@ -1,0 +1,18 @@
+<div class="container">
+  <header class="row">Sample form</header>
+  <section class="row">
+    <div id="placeholder"></div>
+    <!-- <div [innerHTML]="inputData"></div> -->
+    <!-- <div [innerHTML]="trustedData"></div> -->
+    <form class="row g-3">
+      <div class="col-auto">
+        <input type="text" name="input" [(ngModel)]="inputData" />
+      </div>
+      <div class="col-auto">
+        <button type="submit" (click)="addDOM()" class="btn btn-primary mb-3">
+          Add DOM
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
