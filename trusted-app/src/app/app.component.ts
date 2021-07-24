@@ -46,7 +46,7 @@ export class AppComponent {
     // this.document.head.appendChild(scriptElement);
 
     // Runtime code compilation
-    eval(this.inputData);
-    setTimeout(this.inputData);
+    // eval(this.inputData);
+    // setTimeout(this.inputData);
   }
 }
