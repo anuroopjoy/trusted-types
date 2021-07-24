@@ -6,17 +6,17 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TrustedService {
   constructor(private domSanitizer: DomSanitizer) {
-    if ((window as any)?.trustedTypes?.createPolicy) {
-      this.customTrustedPolicy = (window as any).trustedTypes.createPolicy(
+    if (window?.trustedTypes?.createPolicy) {
+      this.customTrustedPolicy = window.trustedTypes.createPolicy(
         'myEscapePolicy',
         {
           createHTML: (str: string) => encodeURIComponent(str),
-          createScript: (str: string) => this.domSanitizer.sanitize(SecurityContext.SCRIPT, str),
-          createScriptURL: (str: string) => this.domSanitizer.sanitize(SecurityContext.URL, str)
+          createScript: (str: string) => this.domSanitizer.sanitize(SecurityContext.SCRIPT, str)!,
+          createScriptURL: (str: string) => this.domSanitizer.sanitize(SecurityContext.URL, str)!
         }
       );
     }
   }
 
-  public customTrustedPolicy;
+  public customTrustedPolicy!: TrustedTypePolicy;
 }

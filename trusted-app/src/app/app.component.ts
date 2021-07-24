@@ -33,7 +33,7 @@ export class AppComponent {
     // this.document.getElementById('placeholder')!.innerHTML =
     //   this.domSanitizer.sanitize(SecurityContext.HTML, this.inputData)!;
     // this.trustedData = this.domSanitizer.bypassSecurityTrustHtml(this.inputData);
-    this.document.getElementById('placeholder')!.innerHTML = this.trustedService.customTrustedPolicy.createHTML(this.inputData);
+    this.document.getElementById('placeholder')!.innerHTML = this.trustedService.customTrustedPolicy.createHTML(this.inputData) as any;
 
     // Inline script
     // const scriptElement = this.document.createElement('script');
