@@ -29,6 +29,7 @@ export class AppComponent {
     //window.alert('Runtime code compile attack')
 
     // Innerhtml attack
+    // this.document.getElementById('placeholder')!.innerHTML = this.inputData;
     // this.document.getElementById('placeholder')!.innerHTML =
     //   this.domSanitizer.sanitize(SecurityContext.HTML, this.inputData)!;
     // this.trustedData = this.domSanitizer.bypassSecurityTrustHtml(this.inputData);
@@ -45,7 +46,7 @@ export class AppComponent {
     // this.document.head.appendChild(scriptElement);
 
     // Runtime code compilation
-    // eval(this.inputData);
-    // setTimeout(this.inputData);
+    eval(this.inputData);
+    setTimeout(this.inputData);
   }
 }
