@@ -19,21 +19,32 @@ export class AppComponent {
   ) {}
   addDOM() {
     // Data
+    // Innerhtml attack
     //<img src='dd' onerror="alert('innerHTML attack')" />
+    // Inline script
     //window.alert('Inline script attack')
-    //http://localhost:8081/attack.js
+    // External script URL
+    //http://localhost:8080/attack.js
+    // Runtime code compilation
     //window.alert('Runtime code compile attack')
 
+    // Innerhtml attack
     // this.document.getElementById('placeholder')!.innerHTML =
     //   this.domSanitizer.sanitize(SecurityContext.HTML, this.inputData)!;
     // this.trustedData = this.domSanitizer.bypassSecurityTrustHtml(this.inputData);
     this.document.getElementById('placeholder')!.innerHTML = this.trustedService.customTrustedPolicy.createHTML(this.inputData);
+
+    // Inline script
     // const scriptElement = this.document.createElement('script');
     // scriptElement.textContent = this.inputData;
     // this.document.head.appendChild(scriptElement);
+
+    // External script URL
     // const scriptElement = this.document.createElement('script');
     // scriptElement.src = this.inputData;
     // this.document.head.appendChild(scriptElement);
+
+    // Runtime code compilation
     // eval(this.inputData);
     // setTimeout(this.inputData);
   }
