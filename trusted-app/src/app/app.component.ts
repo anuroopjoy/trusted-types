@@ -41,9 +41,9 @@ export class AppComponent {
     // this.document.head.appendChild(scriptElement);
 
     // External script URL
-    // const scriptElement = this.document.createElement('script');
-    // scriptElement.src = this.inputData;
-    // this.document.head.appendChild(scriptElement);
+    // const scriptElement1 = this.document.createElement('script');
+    // scriptElement1.src = this.inputData;
+    // this.document.head.appendChild(scriptElement1);
 
     // Runtime code compilation
     // eval(this.inputData);
